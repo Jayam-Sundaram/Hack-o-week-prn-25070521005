@@ -1,0 +1,273 @@
+
+
+
+/* Body styling */
+body {
+
+    /* Set font style */
+    font-family: Arial, sans-serif;
+
+    /* Background color if image fails */
+    background-color: black;
+}
+
+
+/* Main container styling */
+.container {
+
+    /* Set background image */
+    background-image: url(lake.jpg);
+
+    /* Make image cover entire area */
+    background-size: cover;
+
+    /* Center image properly */
+    background-position: center;
+
+    /* Set full screen height */
+    height: 780px;
+
+    /* Add padding inside container */
+    padding: 20px;
+}
+
+
+/* Navigation bar styling */
+.navbar {
+
+    /* Arrange logo and links in row */
+    display: flex;
+
+    /* Space between logo and links */
+    justify-content: space-between;
+
+    /* Align vertically center */
+    align-items: center;
+}
+
+
+/* Logo styling */
+.logo {
+
+    /* Increase font size */
+    font-size: 24px;
+
+    /* Make bold */
+    font-weight: bold;
+
+    /* Set text color */
+    color: white;
+}
+
+
+/* Navigation links container */
+.nav-links {
+
+    /* Remove bullet points */
+    list-style: none;
+
+    /* Arrange links in row */
+    display: flex;
+
+    /* Add space between links */
+    gap: 30px;
+}
+
+
+/* Navigation link styling */
+.nav-links a {
+
+    
+    text-decoration: none;
+
+    /* Set text color */
+    color: white;
+
+    /* Font size */
+    font-size: 16px;
+}
+
+
+
+.nav-links a:hover {
+
+   
+    color: cyan;
+}
+
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.new {
+    font-size: 18px;
+    letter-spacing: 6px;
+    color: rgba(230, 101, 148, 0.97);
+    margin-bottom: 15px;
+}
+
+.place-name {
+    text-transform: uppercase;
+    font-size: 80px;
+    letter-spacing: 8px;
+    color: white;
+    margin: 0;
+    
+}
+
+.tagline {
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 15px;
+}
+
+
+/* Container holding all boxes */
+/* Container holding all boxes */
+.info-container {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 25px;
+}
+
+/* Individual blur box */
+.info-item {
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+
+    color: white;
+
+    text-align: center;
+
+    min-width: 140px;
+}
+
+
+/* Heading inside box */
+.info-item h3 {
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,0.7);
+
+    margin-bottom: 5px;
+}
+
+
+/* Text inside box */
+.info-item p {
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.john{
+    position: absolute;
+
+    bottom: 270px;
+
+    left: 50%;
+
+    
+
+    display: flex;
+
+    gap: 25px;
+}
+
+.john a{
+    
+    background: rgba(255,255,255,0.08);
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px #0c0000;
+    color: white;
+    text-align: center;
+    min-width: 140px;
+
+    transition: all 0.3s ease;
+}
+.john a:hover{
+
+    background: rgba(255,255,255,0.2);
+
+    transform: translateY(-5px) scale(1.05);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+}
+
+
+.Mountain{
+    position: absolute;
+
+    bottom: 270px;
+
+    left: 35%;
+
+    
+
+    display: flex;
+
+    gap: 25px;
+}
+
+
+.Mountain a{
+    
+    background: rgba(255,255,255,0.08);
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px #0c0000;
+    color: white;
+    text-align: center;
+    min-width: 140px;
+
+    transition: all 0.3s ease;
+}
+.Mountain a:hover{
+
+    background: rgba(255,255,255,0.2);
+
+    transform: translateY(-5px) scale(1.05);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+}
