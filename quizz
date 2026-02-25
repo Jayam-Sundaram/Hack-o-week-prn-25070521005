@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breaking Bad Quiz</title>
+    <link rel="stylesheet" href="skyler.css">
+</head>
+<body>
+
+<div class="overlay">
+    <div class="quiz-container">
+
+        <h1>Breaking Bad Quiz</h1>
+        <div id="timer">Time: 60</div>
+
+        <div id="question"></div>
+        <div id="options"></div>
+
+        <div class="buttons">
+            <button onclick="prevQuestion()">Previous</button>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+const quiz = [
+{
+question: "What is Walter White's alias?",
+options: ["Heisenberg", "Jesse", "Gus", "Saul"],
+answer: "Heisenberg"
+},
+{
+question: "What is the color of the meth?",
+options: ["White", "Blue", "Green", "Yellow"],
+answer: "Blue"
+},
+{
+question: "Who is Walter's wife?",
+options: ["Skyler", "Marie", "Jane", "Kim"],
+answer: "Skyler"
+},
+{
+question: "Who is the main drug distributor in Season 4?",
+options: ["Tuco", "Gus Fring", "Saul", "Hank"],
+answer: "Gus Fring"
+}
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answers = new Array(quiz.length);
+
+function loadQuestion(){
+    document.getElementById("question").innerText =
+    quiz[currentQuestion].question;
+
+    let optionsHTML = "";
+
+    quiz[currentQuestion].options.forEach(option => {
+        optionsHTML += `
+        <div class="option">
+        <input type="radio" name="option" value="${option}"
+        ${answers[currentQuestion] === option ? "checked" : ""}>
+        ${option}
+        </div>
+        `;
+    });
+
+    document.getElementById("options").innerHTML = optionsHTML;
+}
+
+function saveAnswer(){
+    let selected =
+    document.querySelector('input[name="option"]:checked');
+
+    if(selected){
+        answers[currentQuestion] = selected.value;
+    }
+}
+
+function nextQuestion(){
+    saveAnswer();
+
+    if(currentQuestion < quiz.length - 1){
+        currentQuestion++;
+        loadQuestion();
+    } else {
+        showScore();
+    }
+}
+
+function prevQuestion(){
+    saveAnswer();
+
+    if(currentQuestion > 0){
+        currentQuestion--;
+        loadQuestion();
+    }
+}
+
+function showScore(){
+    score = 0;
+
+    for(let i=0; i<quiz.length; i++){
+        if(answers[i] === quiz[i].answer){
+            score++;
+        }
+    }
+
+    document.querySelector(".quiz-container").innerHTML =
+    `<h1>Your Score: ${score}/${quiz.length}</h1>
+     <p>Say my name 😎</p>`;
+}
+
+// Timer
+let time = 60;
+
+let timer = setInterval(() => {
+
+    document.getElementById("timer").innerText =
+    "Time: " + time + "s";
+
+    time--;
+
+    if(time < 0){
+        clearInterval(timer);
+        showScore();
+    }
+
+}, 1000);
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
